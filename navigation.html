@@ -1,324 +1,291 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ultimate Glassmorphism Navbar</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neeraj Upadhayay | Cybersecurity & Web Developer</title>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+<style>
 
-        /* Glassmorphism Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            height: 90px;
-            padding: 0 5%;
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            background: rgba(255, 255, 255, 0.12);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-        }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
 
-        .nav-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            height: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+body{
+background:#f8fafc;
+color:#1e293b;
+}
 
-        .logo {
-            font-size: 2.2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
-            letter-spacing: -1px;
-            position: relative;
-        }
+/* HEADER */
 
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
-            transition: width 0.4s ease;
-        }
+header{
+background:#0f172a;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+}
 
-        .logo:hover::after {
-            width: 100%;
-        }
+.logo{
+font-size:22px;
+font-weight:600;
+}
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 10px;
-            perspective: 1000px;
-        }
+nav a{
+color:white;
+text-decoration:none;
+margin-left:30px;
+font-weight:500;
+transition:0.3s;
+}
 
-        .nav-item {
-            position: relative;
-        }
+nav a:hover{
+color:#38bdf8;
+}
 
-        .nav-link {
-            display: block;
-            padding: 16px 28px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.05rem;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform-style: preserve-3d;
-            position: relative;
-            overflow: hidden;
-        }
+/* HERO */
 
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.6s;
-        }
+.hero{
+padding:140px 8% 80px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+min-height:100vh;
+}
 
-        .nav-link:hover::before {
-            left: 100%;
-        }
+.hero h1{
+font-size:48px;
+margin-bottom:15px;
+}
 
-        .nav-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.4);
-            transform: translateY(-8px) rotateX(10deg) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2), 0 0 30px rgba(255,255,255,0.3);
-        }
+.hero span{
+color:#2563eb;
+}
 
-        .nav-link.active {
-            background: linear-gradient(135deg, rgba(255,107,107,0.3) 0%, rgba(78,205,196,0.3) 100%);
-            box-shadow: 0 10px 30px rgba(255,107,107,0.4);
-        }
+.hero p{
+font-size:18px;
+max-width:600px;
+color:#475569;
+}
 
-        /* Custom Cursor */
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            border: 2px solid #ffffff;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: transform 0.1s ease;
-        }
+.buttons{
+margin-top:25px;
+}
 
-        .cursor-follower {
-            position: fixed;
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9998;
-            transition: all 0.3s ease;
-        }
+.btn{
+display:inline-block;
+padding:10px 20px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+border-radius:6px;
+margin-right:15px;
+transition:0.3s;
+}
 
-        /* Hamburger */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            padding: 10px;
-        }
+.btn-outline{
+background:transparent;
+border:2px solid #2563eb;
+color:#2563eb;
+}
 
-        .hamburger span {
-            width: 32px;
-            height: 4px;
-            background: rgba(255,255,255,0.9);
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
+.btn:hover{
+background:#1e40af;
+}
 
-        /* Mobile */
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 90px;
-                left: 0;
-                width: 100%;
-                height: calc(100vh - 90px);
-                background: rgba(15, 15, 25, 0.95);
-                backdrop-filter: blur(30px);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transform: translateX(-100%);
-                opacity: 0;
-                transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            }
+.btn-outline:hover{
+background:#2563eb;
+color:white;
+}
 
-            .nav-menu.active {
-                transform: translateX(0);
-                opacity: 1;
-            }
+/* SECTION */
 
-            .hamburger {
-                display: flex;
-            }
+section{
+padding:80px 8%;
+}
 
-            .nav-item {
-                transform: translateY(50px);
-                opacity: 0;
-                transition: all 0.5s ease;
-            }
+h2{
+font-size:32px;
+margin-bottom:20px;
+}
 
-            .nav-menu.active .nav-item:nth-child(1) { transition-delay: 0.1s; }
-            .nav-menu.active .nav-item:nth-child(2) { transition-delay: 0.2s; }
-            .nav-menu.active .nav-item:nth-child(3) { transition-delay: 0.3s; }
-            .nav-menu.active .nav-item:nth-child(4) { transition-delay: 0.4s; }
-            .nav-menu.active .nav-item:nth-child(5) { transition-delay: 0.5s; }
+/* ABOUT */
 
-            .nav-menu.active .nav-item {
-                transform: translateY(0);
-                opacity: 1;
-            }
+.about p{
+max-width:800px;
+color:#475569;
+}
 
-            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
-            .hamburger.active span:nth-child(2) { opacity: 0; }
-            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(8px, -8px); }
+/* SKILLS */
 
-            .nav-link {
-                margin: 10px 0;
-                padding: 24px 40px;
-                font-size: 1.4rem;
-                border-radius: 25px;
-            }
-        }
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+margin-top:30px;
+}
 
-        /* Demo */
-        .demo-content {
-            margin-top: 90px;
-            padding: 150px 20px;
-            text-align: center;
-            color: white;
-        }
+.skill-card{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+text-align:center;
+font-weight:500;
+}
 
-        .demo-content h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-    </style>
+/* PROJECTS */
+
+.project-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:30px;
+}
+
+.project-card{
+background:white;
+padding:20px;
+border-radius:8px;
+box-shadow:0 3px 12px rgba(0,0,0,0.08);
+}
+
+.project-card h3{
+margin-bottom:10px;
+}
+
+.project-card p{
+color:#475569;
+font-size:14px;
+}
+
+/* CONTACT */
+
+.contact{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:60px 8%;
+}
+
+.contact a{
+color:#38bdf8;
+text-decoration:none;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:10px;
+}
+
+.hero h1{
+font-size:36px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">Neeraj upadhayay</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+<header>
+<div class="logo">Neeraj Upadhayay</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-    <div class="demo-content">
-        <h1>Ultimate Glassmorphism Navbar</h1>
-        <p>Hover karo, tilt dekho, magic cursor follow karega! 🔥✨</p>
-    </div>
+<section id="home" class="hero">
+<h1>Hello, I'm <span>Neeraj Upadhayay</span></h1>
+<p>
+Cybersecurity Student at IILM University | Full-Stack Developer | AI & ML Enthusiast.
+Building secure, scalable and intelligent digital solutions.
+</p>
 
-    <script>
-        // Toggle Menu
-        function toggleMenu() {
-            document.querySelector('.nav-menu').classList.toggle('active');
-            document.querySelector('.hamburger').classList.toggle('active');
-        }
+<div class="buttons">
+<a href="#contact" class="btn">Hire Me</a>
+<a href="resume.pdf" class="btn btn-outline">Download Resume</a>
+</div>
+</section>
 
-        // Custom Cursor
-        const cursor = document.querySelector('.cursor');
-        const follower = document.querySelector('.cursor-follower');
-        let mouseX = 0, mouseY = 0;
+<section id="about" class="about">
+<h2>About Me</h2>
+<p>
+I am passionate about Cybersecurity, AI and modern web development.
+I have built multiple projects including AI-Powered Firewall, Inventory Dashboard,
+Weather App, E-commerce platform and more.  
+I enjoy solving real-world problems through technology and continuously learning new tools.
+</p>
+</section>
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-            
-            cursor.style.left = mouseX + 'px';
-            cursor.style.top = mouseY + 'px';
-            
-            follower.style.left = mouseX + 15 + 'px';
-            follower.style.top = mouseY + 15 + 'px';
-        });
+<section id="skills">
+<h2>Technical Skills</h2>
 
-        // Hover Effects
-        document.querySelectorAll('.nav-link, .logo').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'scale(2) rotate(180deg)';
-                follower.style.transform = 'scale(1.5)';
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'scale(1) rotate(0deg)';
-                follower.style.transform = 'scale(1)';
-            });
-        });
+<div class="skills-grid">
+<div class="skill-card">HTML / CSS</div>
+<div class="skill-card">JavaScript</div>
+<div class="skill-card">React & TypeScript</div>
+<div class="skill-card">Python</div>
+<div class="skill-card">Java</div>
+<div class="skill-card">SQL / MySQL</div>
+<div class="skill-card">Cybersecurity Tools</div>
+<div class="skill-card">Git & GitHub</div>
+</div>
 
-        // Mobile menu close
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) toggleMenu();
-            });
-        });
-    </script>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+<h3>AI-Powered Firewall</h3>
+<p>Machine learning-based firewall system detecting malicious traffic using Python and TensorFlow.</p>
+</div>
+
+<div class="project-card">
+<h3>Inventory Management Dashboard</h3>
+<p>React + TypeScript based dashboard with analytics and real-time data management.</p>
+</div>
+
+<div class="project-card">
+<h3>Weather App</h3>
+<p>Responsive weather application using React and OpenWeather API.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact Me</h2>
+<p>Email: <a href="mailto:neerajupadhayay347@gmail.com">neerajupadhayay347@gmail.com</a></p>
+<p>LinkedIn: <a href="https://www.linkedin.com/in/neeraj-upadhayay-2nd-a0958a246" target="_blank">linkedin.com/in/neeraj-upadhayay</a></p>
+</section>
+
 </body>
 </html>
