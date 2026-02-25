@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 160 100% 90%;
+
+    --card: 220 20% 9%;
+    --card-foreground: 160 60% 85%;
+
+    --popover: 220 20% 9%;
+    --popover-foreground: 160 60% 85%;
+
+    --primary: 160 100% 45%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 200 100% 50%;
+    --secondary-foreground: 220 20% 6%;
+
+    --muted: 220 15% 15%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 160 100% 45%;
+    --accent-foreground: 220 20% 6%;
+
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --warning: 45 100% 55%;
+    --warning-foreground: 220 20% 6%;
+
+    --safe: 160 100% 45%;
+    --safe-foreground: 220 20% 6%;
+
+    --border: 160 30% 18%;
+    --input: 220 15% 15%;
+    --ring: 160 100% 45%;
+
+    --radius: 0.5rem;
+
+    --glow-primary: 0 0 20px hsl(160 100% 45% / 0.3);
+    --glow-danger: 0 0 20px hsl(0 85% 55% / 0.3);
+    --glow-warning: 0 0 20px hsl(45 100% 55% / 0.3);
+    --glow-safe: 0 0 20px hsl(160 100% 45% / 0.3);
+
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 160 60% 85%;
+    --sidebar-primary: 160 100% 45%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 15% 15%;
+    --sidebar-accent-foreground: 160 60% 85%;
+    --sidebar-border: 160 30% 18%;
+    --sidebar-ring: 160 100% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-mono;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(160 100% 45%), hsl(200 100% 50%));
+  }
+
+  .border-glow {
+    box-shadow: var(--glow-primary);
+  }
+
+  .border-glow-danger {
+    box-shadow: var(--glow-danger);
+  }
+
+  .border-glow-warning {
+    box-shadow: var(--glow-warning);
+  }
+
+  .border-glow-safe {
+    box-shadow: var(--glow-safe);
+  }
+
+  .scan-line {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(160 100% 45% / 0.1) 50%,
+      transparent 100%
+    );
+  }
+
+  .grid-bg {
+    background-image: 
+      linear-gradient(hsl(160 100% 45% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(160 100% 45% / 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
