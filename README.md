@@ -1,73 +1,221 @@
-# Welcome to your Lovable project
+# 🛡️ Phishing Website Detection System
 
-## Project info
+### 🚀 Machine Learning + Flask + Live Deployment
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+🌐 **Live Demo:** [https://phishing012.netlify.app/](https://phishing012.netlify.app/)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 📌 Project Overview
 
-**Use Lovable**
+Phishing is one of the most dangerous cyber threats, where attackers create fake websites to steal sensitive information like passwords, banking details, and personal credentials.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+This project is an **AI-powered Phishing Website Detection System** that uses **Machine Learning + URL feature analysis** to detect whether a website is:
 
-Changes made via Lovable will be committed automatically to this repo.
+* ✅ Legitimate
+* ❌ Phishing
 
-**Use your preferred IDE**
+The system is deployed online and accessible via a live web interface.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🌍 Live Application
 
-Follow these steps:
+🔗 **Deployed Link:**
+👉 [https://phishing012.netlify.app/](https://phishing012.netlify.app/)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Users can:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+* Enter any website URL
+* Instantly check phishing probability
+* Get real-time prediction results
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## ✨ Key Features
+
+* 🔎 Real-time URL scanning
+* 🤖 Machine Learning-based classification
+* 📊 Probability score display
+* 🌐 Clean & responsive UI
+* 🔐 Cybersecurity-focused solution
+* ☁️ Live deployment on Netlify
+* 🔌 Optional Google Safe Browsing API integration
+
+---
+
+## 🧠 System Architecture
+
+User Input → Feature Extraction → ML Model → Prediction → Web Interface
+
+---
+
+## 🛠️ Tech Stack
+
+### 🔹 Backend
+
+* Python
+* Flask
+* Scikit-learn
+* Pandas
+* NumPy
+
+### 🔹 Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+### 🔹 Deployment
+
+* Netlify (Frontend Hosting)
+* Flask Backend (API)
+
+---
+
+## 📂 Project Structure
+
+```
+Phishing-Website-Detection/
+│
+├── app.py
+├── model.pkl
+├── feature_extraction.py
+├── requirements.txt
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   └── style.css
+│
+└── README.md
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🧪 How It Works
 
-**Use GitHub Codespaces**
+1️⃣ User enters a URL
+2️⃣ System extracts important phishing-related features:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+* URL length
+* Presence of special symbols (@, -, etc.)
+* Number of subdomains
+* HTTPS usage
+* Suspicious keywords
+  3️⃣ Features are passed to trained ML model
+  4️⃣ Model returns prediction:
+* `0` → Legitimate
+* `1` → Phishing
+  5️⃣ Result is displayed instantly
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 📊 Machine Learning Model
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+* Algorithm Used: Logistic Regression / Random Forest
+* Dataset: Phishing Website Dataset
+* Model Accuracy: (Add your actual accuracy here)
+* Evaluation Metrics:
 
-## How can I deploy this project?
+  * Accuracy
+  * Precision
+  * Recall
+  * F1 Score
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## ⚙️ Installation Guide (Local Setup)
 
-Yes, you can!
+### 1️⃣ Clone Repository
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```bash
+git clone https://github.com/Neeraj29118/Phishing-Website-Detection.git
+cd Phishing-Website-Detection
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### 2️⃣ Create Virtual Environment
+
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+
+Windows:
+
+```
+venv\Scripts\activate
+```
+
+### 3️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Run Flask App
+
+```bash
+python app.py
+```
+
+Open:
+
+```
+http://127.0.0.1:5000/
+```
+
+---
+
+## 🔐 Google Safe Browsing API Integration (Optional)
+
+If using Google Safe Browsing:
+
+1. Enable API in Google Cloud Console
+2. Generate API Key
+3. Remove API restrictions OR allow Safe Browsing API
+4. Add key in `app.py`
+
+---
+
+## 🚀 Future Enhancements
+
+* 🧠 Deep Learning-based phishing detection
+* 🌍 WHOIS Domain lookup integration
+* 📊 Admin analytics dashboard
+* 🛡️ Browser extension version
+* ☁️ Full cloud deployment with backend hosting
+
+---
+
+## 🎯 Why This Project Is Important
+
+* Solves real-world cybersecurity problem
+* Demonstrates ML + Web integration
+* Shows deployment & API handling skills
+* Suitable for internships & cybersecurity roles
+
+---
+
+## 👨‍💻 Author
+
+**Neeraj Upadhayay**
+🎓 B.Tech Cybersecurity Student
+💻 Machine Learning & Security Developer
+
+🔗 LinkedIn: [https://www.linkedin.com/in/neeraj-upadhayay-2nd-a0958a246](https://www.linkedin.com/in/neeraj-upadhayay-2nd-a0958a246)
+🐙 GitHub: [https://github.com/Neeraj29118](https://github.com/Neeraj29118)
+
+---
+
+## ⭐ Support
+
+If you like this project:
+
+* ⭐ Star the repository
+* 🍴 Fork it
+* 🤝 Contribute
+
+
+Tell me which one you want next, Neeraj 🚀
